@@ -1,4 +1,9 @@
 
+# _config.yml 맨 위에 추가
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache  # 성능 향상을 위해 권장
+
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default" # 혹은 "air", "contrast" 등
 locale: "ko-KR"
