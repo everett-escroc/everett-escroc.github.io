@@ -1,28 +1,146 @@
+# =========================================================
+# Minimal Mistakes (remote_theme) - BI Engineer Knowledge Vault 스타일
+# =========================================================
 
-# _config.yml 맨 위에 추가
+# GitHub Pages + remote_theme
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache  # 성능 향상을 위해 권장
+  - jekyll-include-cache   # Minimal Mistakes 필수(캐시 include 태그)  [oai_citation:1‡GitHub](https://github.com/mmistakes/minimal-mistakes?utm_source=chatgpt.com)
+  - jekyll-feed            # RSS
+  - jekyll-sitemap         # 사이트맵
+  - jekyll-seo-tag         # SEO 메타
 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # 혹은 "air", "contrast" 등
+
+# ---------------------------------------------------------
+# Look & Feel (덜 화려, 더 문서형)
+# ---------------------------------------------------------
+minimal_mistakes_skin: "air"   # 밝고 미니멀한 문서 느낌 (default보다 덜 답답)  [oai_citation:2‡GitHub](https://github.com/mmistakes/minimal-mistakes/discussions/3267?utm_source=chatgpt.com)
 locale: "ko-KR"
+timezone: "Asia/Seoul"
 
-# 기본 정보
+# ---------------------------------------------------------
+# Site Identity
+# ---------------------------------------------------------
 title: "초보 BI Engineer의 데이터 보관소"
+subtitle: "모델링 · 대시보드 · 데이터 흐름을 설계하는 기록"
 name: "Everett"
-bio: "비즈니스를 데이터 모델로 설계하고자 공부하는 BI 엔지니어입니다."
-links:
-  - label: "Email"
-    icon: "fas fa-fw fa-envelope-square"
-    url: "mailto:lucli.ipad@gmail.com"
+description: "BI/데이터 아키텍처 관점에서 모델링, 지표 설계, 파이프라인, 시각화 구현을 정리합니다."
+url: ""       # 예: "https://<username>.github.io"
+baseurl: ""   # 예: "/<repo>" (username.github.io면 보통 비움)
 
-# BI 엔지니어 필수: 사이드바 메뉴 활성화
-# 왼쪽 메뉴에 '도메인', '모델링' 등을 고정시켜서 전문성을 보여줍니다.
+# 깔끔한 상단 타이틀(필요 시)
+masthead_title: "Data Vault"
+
+# ---------------------------------------------------------
+# Author Profile (문서형 블로그는 프로필을 '조용히' 노출하는 게 좋음)
+# ---------------------------------------------------------
+author:
+  name: "Everett"
+  bio: "비즈니스를 데이터 모델로 설계하고자 공부하는 BI 엔지니어입니다."
+  location: "Seoul, KR"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:lucli.ipad@gmail.com"
+    # 원하면 아래도 추가 (계정 있으면만)
+    # - label: "GitHub"
+    #   icon: "fab fa-fw fa-github"
+    #   url: "https://github.com/<your-id>"
+    # - label: "LinkedIn"
+    #   icon: "fab fa-fw fa-linkedin"
+    #   url: "https://www.linkedin.com/in/<your-id>/"
+
+# ---------------------------------------------------------
+# Navigation / Sidebar (전문성 “카테고리 체계” 강조)
+# ---------------------------------------------------------
+# _data/navigation.yml 에 main 메뉴를 만들어두고,
+# 각 페이지/포스트에서 sidebar: nav: "main" 또는 layout defaults로 자동 적용
+# (sidebar nav 방식은 Minimal Mistakes 네비게이션 구성 방식에 맞춤)  [oai_citation:3‡mmistakes.github.io](https://mmistakes.github.io/minimal-mistakes/docs/navigation/?utm_source=chatgpt.com)
 sidebar:
   nav: "main"
 
-# 다이어그램(Mermaid) 지원 설정
-# 모델링을 코드로 그리기 위해 필요합니다.
-words_per_minute: 200
+# ---------------------------------------------------------
+# Content UX (읽기/탐색 최적화: 당신 스타일에 맞게 “과하지 않게, 하지만 기능적으로”)
+# ---------------------------------------------------------
 show_date: true
+read_time: true
+words_per_minute: 220
+
+search: true
+search_full_content: true
+
+# 글 하단: 관련 글/공유/TOC는 “지식 보관소”에 꽤 잘 어울림
+toc: true
+toc_sticky: true
+breadcrumbs: true
+
+# ---------------------------------------------------------
+# Blog Structure
+# ---------------------------------------------------------
+permalink: "/:categories/:title/"
+paginate: 8
+paginate_path: "/page:num/"
+
+# pages 폴더를 쓰면 관리가 편함
+include:
+  - _pages
+
+# ---------------------------------------------------------
+# Markdown / Code Highlight
+# ---------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: 1..3
+
+# ---------------------------------------------------------
+# Defaults (포스트는 자동으로 “문서형 single + 프로필 + TOC”)
+# ---------------------------------------------------------
+defaults:
+  # Posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "main"
+      toc: true
+      toc_sticky: true
+      read_time: true
+      related: true
+
+  # Pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "main"
+      toc: true
+      toc_sticky: true
+
+# ---------------------------------------------------------
+# Footer (깔끔하게)
+# ---------------------------------------------------------
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:lucli.ipad@gmail.com"
+
+# ---------------------------------------------------------
+# Optional: Mermaid (코드로 모델링 다이어그램)
+# - Minimal Mistakes에서 보통 head에 스크립트를 올리는 방식으로 해결
+# - 아래는 무난한 CDN 로드(원하면 활성화)
+# ---------------------------------------------------------
+# head_scripts:
+#   - "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"
+# after_footer_scripts:
+#   - "/assets/js/mermaid-init.js"  # 직접 파일 만들어 init 해주는 방식 추천
