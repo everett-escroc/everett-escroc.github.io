@@ -1,0 +1,21 @@
+# 블로그 설정
+title: "BI Engineer's Archive"
+description: "데이터 모델링 & 도메인 지식 기록"
+url: "https://username.github.io" # 본인 주소로 수정
+
+# 테마 설정 (가장 유명하고 깔끔한 테마입니다)
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast" 등으로 변경 가능
+
+# 빌드 설정
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
