@@ -1,21 +1,18 @@
-# 블로그 설정
-title: "BI Engineer's Archive"
-description: "데이터 모델링 & 도메인 지식 기록"
-url: "https://username.github.io" # 본인 주소로 수정
+# 기본 정보
+title: "초보 BI Engineer의 데이터 보관소"
+name: "Everett"
+bio: "비즈니스를 데이터 모델로 설계하고자 공부하는 BI 엔지니어입니다."
+links:
+  - label: "Email"
+    icon: "fas fa-fw fa-envelope-square"
+    url: "mailto:lucli.ipad@gmail.com"
 
-# 테마 설정 (가장 유명하고 깔끔한 테마입니다)
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast" 등으로 변경 가능
+# BI 엔지니어 필수: 사이드바 메뉴 활성화
+# 왼쪽 메뉴에 '도메인', '모델링' 등을 고정시켜서 전문성을 보여줍니다.
+sidebar:
+  nav: "main"
 
-# 빌드 설정
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
+# 다이어그램(Mermaid) 지원 설정
+# 모델링을 코드로 그리기 위해 필요합니다.
+words_per_minute: 200
+show_date: true
