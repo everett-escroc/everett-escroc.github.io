@@ -1,5 +1,9 @@
-# _data/navigation.yml 내용
 main:
+  - title: "Home"
+    url: /
+
+# 왼쪽 사이드바에 넣고 싶은 메뉴
+side:
   - title: "데이터 모델링"
     url: /categories/modeling/
   - title: "도메인 지식"
