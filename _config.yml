@@ -1,3 +1,8 @@
+
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # 혹은 "air", "contrast" 등
+locale: "ko-KR"
+
 # 기본 정보
 title: "초보 BI Engineer의 데이터 보관소"
 name: "Everett"
