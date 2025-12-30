@@ -1,0 +1,8 @@
+# _data/navigation.yml 내용
+main:
+  - title: "데이터 모델링"
+    url: /categories/modeling/
+  - title: "도메인 지식"
+    url: /categories/domain/
+  - title: "SQL/Tech"
+    url: /categories/tech/
