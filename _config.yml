@@ -58,7 +58,7 @@ author:
 # 각 페이지/포스트에서 sidebar: nav: "main" 또는 layout defaults로 자동 적용
 # (sidebar nav 방식은 Minimal Mistakes 네비게이션 구성 방식에 맞춤)  [oai_citation:3‡mmistakes.github.io](https://mmistakes.github.io/minimal-mistakes/docs/navigation/?utm_source=chatgpt.com)
 sidebar:
-  nav: "main"
+  nav: "side"
 
 # ---------------------------------------------------------
 # Content UX (읽기/탐색 최적화: 당신 스타일에 맞게 “과하지 않게, 하지만 기능적으로”)
@@ -122,7 +122,7 @@ defaults:
       layout: single
       author_profile: false
       sidebar:
-        nav: "main"
+        nav: "side"
       toc: true
       toc_sticky: true
 
